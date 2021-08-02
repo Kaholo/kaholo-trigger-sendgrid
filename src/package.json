@@ -1,0 +1,15 @@
+{
+  "name": "kaholo-trigger-sendgrid",
+  "version": "1.0.0",
+  "description": "Handles SendGrid Webhooks",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "author": "Kaholo Group(Amit Alon)",
+  "dependencies": {
+    "micromatch": "^4.0.4",
+    "@sendgrid/eventwebhook": "^7.4.5"
+  }
+}

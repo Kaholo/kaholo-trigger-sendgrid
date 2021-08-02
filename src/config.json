@@ -1,0 +1,98 @@
+{
+  "name": "SendGrid-Trigger",
+  "type": "trigger",
+  "execProgram": "node",
+  "main": "app.js",
+  "imgUrl": "logo.png",
+  "version": "1.0.0",
+  "description": "Handles SendGrid Webhooks",
+  "settings": [
+    {
+      "name": "publicKey",
+      "viewName": "Public Key",
+      "type": "string"
+    }
+  ],
+  "methods": [
+    {
+      "name": "event",
+      "route": "post /webhook/sendgrid/event",
+      "viewName": "Email Event",
+      "params": [
+        {
+          "name": "emailPattern",
+          "viewName": "Email Pattern",
+          "type": "string"
+        },
+        {
+          "name": "trigEventType",
+          "viewName": "Event Type",
+          "type": "options",
+          "options": [
+            {
+              "id": "any",
+              "name": "Any"
+            },
+            {
+              "id": "anyDelivery",
+              "name": "Any Delivery Event"
+            },
+            {
+              "id": "anyEngagement",
+              "name": "Any Engagement Event"
+            },
+            {
+              "id": "processed",
+              "name": "Processed"
+            },
+            {
+              "id": "dropped",
+              "name": "Dropped"
+            },
+            {
+              "id": "delivered",
+              "name": "Delivered"
+            },
+            {
+              "id": "deferred",
+              "name": "Deferred"
+            },
+            {
+              "id": "bounce",
+              "name": "Bounce"
+            },
+            {
+              "id": "open",
+              "name": "Open"
+            },
+            {
+              "id": "click",
+              "name": "Click"
+            },
+            {
+              "id": "spamreport",
+              "name": "Spam Report"
+            },
+            {
+              "id": "unsubscribe",
+              "name": "Unsubscribe"
+            },
+            {
+              "id": "group_unsubscribe",
+              "name": "Group Unsubscribe"
+            },
+            {
+              "id": "group_resubscribe",
+              "name": "Group Resubscribe"
+            }
+          ]
+        },
+        {
+          "name": "categoryPats",
+          "viewName": "Category Patterns",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
