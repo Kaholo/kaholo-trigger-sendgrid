@@ -21,7 +21,7 @@
       "params": [
         {
           "name": "emailPattern",
-          "viewName": "Email Pattern",
+          "viewName": "Recipient Email Pattern",
           "type": "string"
         },
         {
