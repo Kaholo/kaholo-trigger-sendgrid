@@ -18,7 +18,7 @@ async function event(req, res, settings, triggerControllers) {
 
       triggerControllers.forEach(trigger => {
           const { emailPattern, trigEventType} = trigger.params;
-          const categoryPats = (trigger.params.categoryPats || "").split("\n");
+          const categoryPats = (trigger.params.categoryPats || "").split("\n").filter(val => val);
           
           if (emailPattern && !isMatch(email, emailPattern)) return;
 
@@ -38,7 +38,7 @@ async function event(req, res, settings, triggerControllers) {
     res.status(204).send("OK");
   }
   catch (err){
-    res.status(500).send({err :err.message || err, triggerControllers});
+    res.status(500).send({err: err.message || err});
   }
 }
 
